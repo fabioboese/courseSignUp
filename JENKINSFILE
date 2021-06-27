@@ -20,7 +20,7 @@ pipeline {
         sh "dotnet add ${workspace}/CourseSignUp.Api.Test/CourseSignUp.Api.Test.csproj package JUnitTestLogger --version 1.1.0"
         sh "dotnet test ${workspace}/CourseSignUp.Api.Test/CourseSignUp.Api.Test.csproj --logger \"junit;LogFilePath=${workspace}/TestResults/results.xml\" --configuration release --collect \"Code coverage\""
         sh "destinationFolder=${workspace}/TestResults"
-        sh "[ ! -d \"$destinationFolder\" ] && mkdir -p \"$destinationFolder\"
+        sh "[ ! -d \"$destinationFolder\" ] && mkdir -p \"$destinationFolder\""
         sh "files=(`ls -R ${workspace}/CourseSignUp.Api.Test/TestResults/*.coverage`)"
         sh "echo ${files[0]}"
       }        
