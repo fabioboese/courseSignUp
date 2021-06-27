@@ -1,6 +1,9 @@
-
-stage ('Clean workspace') {
-  steps {
-    cleanWs()
+pipeline {
+  stages {
+    stage ('Clean workspace') {
+      steps {
+        cleanWs()
+      }
+    }
   }
 }
