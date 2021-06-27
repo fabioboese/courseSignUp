@@ -15,5 +15,11 @@ pipeline {
       }
     }
     
+    stage('Test') {
+      steps {
+        sh "dotnet test ${workspace}/CourseSignUp.sln"
+      }
+    }    
+    
   }
 }
