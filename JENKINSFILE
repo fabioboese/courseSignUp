@@ -8,5 +8,12 @@ pipeline {
         sh "dotnet restore ${workspace}/CourseSignUp.sln"
       }
     }
+    
+    stage('Build') {
+      steps {
+        sh "dotnet build ${workspace}/CourseSignUp.sln"
+      }
+    }
+    
   }
 }
